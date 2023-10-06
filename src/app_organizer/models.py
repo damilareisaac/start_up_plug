@@ -9,6 +9,9 @@ class Tag(models.Model):
         help_text="A label for URL config",
     )
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self) -> str:
         return self.name
 
@@ -31,6 +34,7 @@ class StartUp(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=["name"])]
+        get_latest_by = "founded_date"
 
     def __str__(self) -> str:
         return self.name
@@ -43,13 +47,17 @@ class NewsLink(models.Model):
         help_text="A label for URL config",
         unique=True,
     )
-    publish_date = models.DateField()
+    published_date = models.DateField()
     link = models.URLField(max_length=255)
     start_up = models.ForeignKey(
         StartUp,
         on_delete=models.CASCADE,
         related_name="news_link",
     )
+
+    class Meta:
+        get_latest_by = "published_date"
+        ordering = ["-published_date"]
 
     def __str__(self) -> str:
         return f"{self.title}: {self.link}"
