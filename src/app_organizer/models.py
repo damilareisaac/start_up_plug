@@ -9,6 +9,9 @@ class Tag(models.Model):
         help_text="A label for URL config",
     )
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class StartUp(models.Model):
     name = models.CharField(max_length=64)
