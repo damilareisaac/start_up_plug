@@ -50,3 +50,6 @@ class NewsLink(models.Model):
         on_delete=models.CASCADE,
         related_name="news_link",
     )
+
+    def __str__(self) -> str:
+        return self.title
