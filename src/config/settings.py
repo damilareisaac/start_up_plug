@@ -24,8 +24,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_extensions",
     # first party
-    "blog.apps.BlogConfig",
-    "organizer.apps.OrganizerConfig",
+    "app_blog.apps.BlogConfig",
+    "app_organizer.apps.OrganizerConfig",
 ]
 
 MIDDLEWARE = [
