@@ -58,6 +58,8 @@ class NewsLink(models.Model):
     class Meta:
         get_latest_by = "published_date"
         ordering = ["-published_date"]
+        unique_together = ("slug", "start_up")
+        verbose_name = "news article"
 
     def __str__(self) -> str:
         return f"{self.title}: {self.link}"
