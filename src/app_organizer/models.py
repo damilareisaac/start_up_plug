@@ -32,6 +32,9 @@ class StartUp(models.Model):
     class Meta:
         indexes = [models.Index(fields=["name"])]
 
+    def __str__(self) -> str:
+        return self.title
+
 
 class NewsLink(models.Model):
     title = models.CharField(max_length=64)
