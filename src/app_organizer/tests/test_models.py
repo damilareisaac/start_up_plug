@@ -3,26 +3,19 @@ import json
 
 from django.test import TestCase
 from django.db.utils import IntegrityError
-from .models import Tag
+from app_organizer.models import Tag
 
 # Create your tests here.
 
 
 @pytest.mark.django_db
 class TestTagModel(TestCase):
-    @pytest.mark.parametrize("tag_name", "tag_slug", [("Isaac", "isaac")])
     def test_create_tag(self):
-        print(self)
-        # tag = Tag.objects.create(name=tag_name)
-        # all_tag_names = Tag.objects.all().values_list(
-        #     "name",
-        #     "slug",
-        #     flat=True,
-        # )
-        # TestCase.assertEqual(self, Tag.objects.count(), 1)
-        # TestCase.assertEqual(self, tag.name, tag_name)
-        # TestCase.assertEqual(self, tag.slug, tag_slug)
-        # TestCase.assertIn(self, tag.name, all_tag_names)
+        self.tag_name = "Tag 1"
+        Tag.objects.create(name=self.tag_name)
+        tag = Tag.objects.get(name=self.tag_name)
+        TestCase.assertEqual(self, tag.name, "Tag 1")
+        TestCase.assertEqual(self, tag.slug, "tag-1")
 
     def test_unique_constraints_on_tag_name_and_slug(self):
         Tag.objects.create(name="Isaac")
