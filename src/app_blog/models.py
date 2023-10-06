@@ -17,4 +17,5 @@ class Post(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.title
+        published_date_string = self.published_date.strftime("%Y-%m-%d")
+        return f"{self.title}: published on {published_date_string}"
