@@ -33,7 +33,7 @@ class StartUp(models.Model):
         indexes = [models.Index(fields=["name"])]
 
     def __str__(self) -> str:
-        return self.title
+        return self.name
 
 
 class NewsLink(models.Model):
@@ -52,4 +52,4 @@ class NewsLink(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.title
+        return f"{self.title}: {self.link}"
