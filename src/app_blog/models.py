@@ -15,3 +15,6 @@ class Post(models.Model):
         StartUp,
         related_name="posts",
     )
+
+    def __str__(self) -> str:
+        return self.title
