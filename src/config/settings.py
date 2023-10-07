@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     # first party
     "app_blog.apps.BlogConfig",
     "app_organizer.apps.OrganizerConfig",
+    "app_newslink.apps.NewslinkConfig",
 ]
 
 MIDDLEWARE = [
