@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                 ),
             ],
             options={
-                "get_latest_by": "founded_date",
+                "ordering": ["-founded_date"],
             },
         ),
         migrations.CreateModel(

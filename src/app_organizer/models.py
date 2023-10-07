@@ -42,7 +42,7 @@ class StartUp(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=["name"])]
-        get_latest_by = "founded_date"
+        ordering = ("-founded_date",)
 
     def __str__(self) -> str:
         return self.name
