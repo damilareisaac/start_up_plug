@@ -47,6 +47,11 @@ class StartUp(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
 
 class NewsLink(models.Model):
     title = models.CharField(max_length=64)
