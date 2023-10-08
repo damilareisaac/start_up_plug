@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OrganizerConfig(AppConfig):
+class StartUpConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "app_organizer"
+    name = "app_startup"

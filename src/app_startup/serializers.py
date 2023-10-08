@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer, HyperlinkedRelatedField, Field
 
-from app_organizer.models import StartUp, Tag
+from app_startup.models import StartUp, Tag
 
 
 class TagSerializer(ModelSerializer):

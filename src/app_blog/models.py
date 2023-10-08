@@ -1,5 +1,5 @@
 from django.db import models
-from app_organizer.models import Tag, StartUp
+from app_startup.models import Tag, StartUp
 
 
 class Post(models.Model):

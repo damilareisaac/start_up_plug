@@ -1,6 +1,6 @@
 from django.db import models
 
-from app_organizer.models import StartUp
+from app_startup.models import StartUp
 
 
 # Create your models here.

@@ -2,7 +2,7 @@ import pytest
 import datetime
 from django.test import TestCase
 from django.db.utils import IntegrityError
-from app_organizer.models import Tag, StartUp
+from app_startup.models import Tag, StartUp
 
 
 # Create your tests here.

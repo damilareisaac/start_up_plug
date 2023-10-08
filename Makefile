@@ -2,4 +2,4 @@ test:
 	pytest src/.
 
 test-organizer:
-	pytest src/app_organizer/tests/ -s
+	pytest src/app_startup/tests/ -s

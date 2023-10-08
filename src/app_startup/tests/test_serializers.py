@@ -1,8 +1,8 @@
 from django.test import TestCase
 import pytest
 from collections import OrderedDict
-from app_organizer.models import StartUp, Tag
-from app_organizer.serializers import StartUpSerializer
+from app_startup.models import StartUp, Tag
+from app_startup.serializers import StartUpSerializer
 
 
 @pytest.mark.django_db
