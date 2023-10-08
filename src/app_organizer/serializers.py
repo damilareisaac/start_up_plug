@@ -10,7 +10,7 @@ class TagSerializer(ModelSerializer):
 
 
 class StartUpSerializer(ModelSerializer):
-    # tags = TagSerializer(many=True)
+    tags = TagSerializer(many=True)
 
     class Meta:
         model = StartUp
