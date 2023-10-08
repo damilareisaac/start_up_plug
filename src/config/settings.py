@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     "django_extensions",
     # first party
     "app_blog.apps.BlogConfig",
-    "app_organizer.apps.OrganizerConfig",
+    "app_organizer.apps.StartUpConfig",
     "app_newslink.apps.NewslinkConfig",
 ]
 
