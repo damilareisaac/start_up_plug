@@ -1,10 +1,10 @@
 from app_startup.serializers import TagSerializer
-from models import Post
+from .models import Post
 
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import HyperlinkedModelSerializer
 
 
-class PostSerializer(ModelSerializer):
+class PostSerializer(HyperlinkedModelSerializer):
     tags = TagSerializer(many=True)
 
     class Meta:
