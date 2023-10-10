@@ -9,3 +9,5 @@ identifier.sqlite
 .python-version
 .envrc
 .pytest_cache
+
+**/*__pycache__
