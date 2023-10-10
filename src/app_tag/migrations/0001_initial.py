@@ -6,13 +6,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [
-        ("app_tag", "0001_initial"),
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name="StartUp",
+            name="Tag",
             fields=[
                 (
                     "id",
@@ -23,27 +21,16 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("name", models.CharField(max_length=64)),
+                ("name", models.CharField(max_length=64, unique=True)),
                 (
                     "slug",
                     models.SlugField(
                         help_text="A label for URL config", max_length=64, unique=True
                     ),
                 ),
-                ("description", models.TextField()),
-                ("founded_date", models.DateField()),
-                ("contact", models.EmailField(max_length=254)),
-                ("website", models.URLField(max_length=255)),
-                (
-                    "tags",
-                    models.ManyToManyField(related_name="start_ups", to="app_tag.tag"),
-                ),
             ],
             options={
-                "ordering": ("-founded_date",),
-                "indexes": [
-                    models.Index(fields=["name"], name="app_startup_name_2a8398_idx")
-                ],
+                "ordering": ["name"],
             },
         ),
     ]
