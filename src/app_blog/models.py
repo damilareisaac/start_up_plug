@@ -1,5 +1,6 @@
 from django.db import models
-from app_startup.models import Tag, StartUp
+from app_startup.models import StartUp
+from app_tag.models import Tag
 
 
 class Post(models.Model):
