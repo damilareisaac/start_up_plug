@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_extensions",
     # first party
+    "app_tag.apps.TagConfig",
     "app_startup.apps.StartUpConfig",
     "app_blog.apps.BlogConfig",
     "app_newslink.apps.NewslinkConfig",
