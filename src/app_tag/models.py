@@ -1,12 +1,14 @@
 from django.db import models
 from django.utils.text import slugify
+from django_extensions.db.fields import AutoSlugField
 
 SLUG_HINT_TEXT = "A label for URL config"
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=64, unique=True)
-    slug = models.SlugField(
+    slug = AutoSlugField(
+        populate_from="name",
         max_length=64,
         unique=True,
         help_text=SLUG_HINT_TEXT,

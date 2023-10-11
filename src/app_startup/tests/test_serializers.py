@@ -35,9 +35,9 @@ class TestStartUpSerializer(TestCase):
         data = {
             **DATA,
             "tags": [
-                {"name": "tag1", "slug": "tag1"},
-                {"name": "tag2", "slug": "tag2"},
-                {"name": "tag3", "slug": "tag3"},
+                {"name": "tag1"},
+                {"name": "tag2"},
+                {"name": "tag3"},
             ],
         }
         s_startup = StartUpSerializer(
