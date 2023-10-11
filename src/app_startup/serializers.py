@@ -18,3 +18,4 @@ class StartUpSerializer(ModelSerializer):
         if tags_data:
             tags_list = [Tag.objects.get_or_create(**tag) for tag, _ in tags_data]
             startup.tags.add(tags_list)
+        return startup
