@@ -7,6 +7,15 @@ from app_tag.models import Tag
 
 @pytest.mark.django_db
 class TestTagModel(TestCase):
+    def test_concrete_fields(self):
+        fields_name = [field.name for field in Tag._meta.fields]
+        expected_fields_name = ["id", "name", "slug"]
+        TestCase.assertListEqual(
+            self,
+            fields_name,
+            expected_fields_name,
+        )
+
     def test_create_tag(self):
         self.tag_name = "Tag 1"
         Tag.objects.create(name=self.tag_name)
