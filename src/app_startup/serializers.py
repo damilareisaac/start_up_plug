@@ -1,12 +1,7 @@
-from rest_framework.serializers import ModelSerializer, HyperlinkedRelatedField, Field
+from rest_framework.serializers import ModelSerializer
 
-from app_startup.models import StartUp, Tag
-
-
-class TagSerializer(ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = "__all__"
+from app_startup.models import StartUp
+from app_tag.serializers import TagSerializer
 
 
 class StartUpSerializer(ModelSerializer):
