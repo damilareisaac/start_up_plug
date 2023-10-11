@@ -4,8 +4,8 @@ from django.test import RequestFactory, TestCase
 from app_startup.serializers import StartUpSerializer
 
 
+@pytest.mark.django_db
 class TestStartUpSerializer(TestCase):
-    @pytest.mark.skip("to be continued")
     def test_start_up_serializer_with_no_tags(self):
         data = {
             "name": "StartUp name 1",
@@ -20,5 +20,6 @@ class TestStartUpSerializer(TestCase):
             data=data,
             context={"request": fake_request},
         )
-        TestCase.assertFalse(self, s_startup.is_valid())
+        TestCase.assertTrue(self, s_startup.is_valid())
         TestCase.assertEqual(self, s_startup.errors, {})
+        TestCase.assertDictEqual(self, s_startup.data, data)

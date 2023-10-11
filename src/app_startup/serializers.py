@@ -5,7 +5,7 @@ from app_tag.serializers import TagSerializer
 
 
 class StartUpSerializer(ModelSerializer):
-    tags = TagSerializer(many=True)
+    tags = TagSerializer(many=True, read_only=True)
 
     class Meta:
         model = StartUp
